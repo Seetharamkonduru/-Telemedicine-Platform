@@ -1,0 +1,177 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 20px;
+  background-color: #f4f4f4;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #097aeb;
+  color: white;
+}
+
+.navbar h1 {
+  font-size: 24px;
+}
+
+.navbar nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+}
+
+/* Container */
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+/* Calendar */
+.calendar-container {
+  margin-bottom: 15px;
+}
+
+.nav-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.nav-buttons button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.nav-buttons button:hover {
+  background-color: #0056b3;
+}
+
+#selected-date {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.availability {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Slots */
+.slots {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  justify-content: center;
+  padding: 10px;
+}
+
+.slot-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 12px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.slot-button:hover {
+  background-color: #218838;
+}
+
+.slot-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Appointment Confirmation Styles */
+.container h2 {
+  text-align: center;
+  color: #28a745;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.container h3 {
+  margin-top: 30px;
+  color: #333;
+}
+
+.container p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.container span {
+  font-weight: bold;
+  color: #007bff;
+}
+
+hr {
+  margin: 20px 0;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+a:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+    }
+    .navbar nav {
+        margin-top: 10px;
+    }
+    .navbar nav a {
+        margin: 5px 0;
+        font-size: 16px;
+    }
+    .container {
+        padding: 15px;
+        margin: 10px auto;
+    }
+    .slots {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+    .slot-button {
+        padding: 10px;
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDS MedEase</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1>🏥 CDS MedEase</h1>
+            <nav id="main-nav">
+                <a href="index.html">Home</a>
+                <a href="FDoctors.html">Find Doctors</a>
+                <a href="Aboutus.html">About Us</a>
+            </nav>
+            <div class="auth-buttons" id="auth-buttons">
+                <a href="login.html" class="sign-in-button">
+                    <button class="sign-in">Sign In</button>
+                </a>
+                <a href="register.html" class="register-button">
+                    <button class="register">Register</button>
+                </a>
+            </div>
+        </div>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search doctors, specialties...">
+            <button onclick="searchDoctors()">Search</button>
+        </div>
+    </header>
+
+    <section class="specialties">
+        <h2>Popular Specialties</h2>
+        <div class="specialty-list">
+            <div class="specialty">Cardiology</div>
+            <div class="specialty">Neurology</div>
+            <div class="specialty">Dental</div>
+            <div class="specialty">Ophthalmology</div>
+        </div>
+    </section>
+
+    <section class="doctors">
+        <h2>Available Doctors</h2>
+        <div class="doctor-list" id="doctorList">
+            </div>
+    </section>
+
+    <section class="urgent-consultation">
+        <h2>Need Urgent Medical Attention?</h2>
+        <p>Connect with our doctors instantly through video consultation. Available 24/7 for your healthcare needs.</p>
+        <button>CALL -  123-456-7890</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 CDS MedEase. All rights reserved.</p>
+    </footer>
+
+    <script src="index.js"></script>
+    <script type="module">
+        // This Supabase integration is separate from the MongoDB backend authentication.
+        // If you are no longer using Supabase, you can remove this script block.
+        import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+
+        const supabaseUrl = 'https://xvacmpinrjexdrpddxjm.supabase.co';
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh2YWNtcGlucmpleGRycGRkeGptIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDgwMTk2OTUsImV4cCI6MjA2MzU5NTY5NX0.ud8x_bm_wrNBWoPH71MCRkKa3L7Z9R3TNkxJWa3O080';
+
+        const supabase = createClient(supabaseUrl, supabaseKey);
+
+        async function fetchUsers() {
+            const { data, error } = await supabase
+                .from('users')
+                .select('*');
+
+            if (error) {
+                console.error('Error:', error);
+            } else {
+                console.log('Users (from Supabase):', data);
+            }
+        }
+        // fetchUsers(); // Uncomment if you want to test Supabase connection
+    </script>
+</body>
+</html>

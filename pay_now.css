@@ -1,0 +1,259 @@
+/* Import Google Font - Inter (consistent with login/register) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f2f5; /* Light gray background */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Stack header, container, footer */
+    min-height: 100vh;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 15px 50px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar h1 {
+    color: #008cba;
+}
+
+.navbar nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.auth-buttons button {
+    margin-left: 10px;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.sign-in {
+    background-color: white;
+    border: 1px solid #008cba;
+    color: #008cba;
+}
+
+.register {
+    background-color: #008cba;
+    color: white;
+}
+
+/* Main container for payment content */
+.container {
+    flex-grow: 1; /* Allow container to take remaining vertical space */
+    max-width: 800px;
+    margin: 40px auto; /* More margin top/bottom */
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center content inside container */
+}
+
+.container h2 {
+    color: #2e7d32; /* Green heading */
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.payment-options {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 30px; /* Space between payment sections */
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.payment-card {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    flex: 1; /* Allow cards to grow */
+    min-width: 300px; /* Minimum width for each card */
+    max-width: 45%; /* Max width for two columns */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.payment-card h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.qr-code {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 20px;
+    border: 5px solid #2e7d32; /* Green border for QR */
+    border-radius: 8px; /* Slightly rounded QR code */
+}
+
+.qr-code-section p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Card Details Form */
+.card-details-section form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between form groups */
+}
+
+.form-group {
+    text-align: left;
+    width: 100%;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    color: #4a5568;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: calc(100% - 20px); /* Adjust for padding */
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #2e7d32;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.2);
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+.form-row .form-group {
+    flex: 1; /* Distribute space evenly */
+}
+
+.submit-payment-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #2e7d32, #1b5e20);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
+}
+
+.submit-payment-btn:hover {
+    background: linear-gradient(135deg, #1b5e20, #2e7d32);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(46, 125, 50, 0.4);
+}
+
+.submit-payment-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(46, 125, 50, 0.2);
+}
+
+.message {
+    margin-top: 15px;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.message[style*="red"] {
+    color: #dc3545;
+}
+
+.message[style*="green"] {
+    color: #28a745;
+}
+
+.back-to-dashboard-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #6c757d; /* Gray color */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 30px;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* For anchor tag */
+}
+
+.back-to-dashboard-btn:hover {
+    background-color: #5a6268;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    margin-top: auto; /* Push footer to bottom */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+    .navbar nav {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar nav a {
+        margin: 5px 0;
+    }
+    .auth-buttons {
+        margin-top: 10px;
+    }
+    .container {
+        margin: 20px;
+        padding: 20px;
+    }
+    .payment-options {
+        flex-direction: column; /* Stack cards vertically */
+        gap: 20px;
+    }
+    .payment-card {
+        max-width: 100%; /* Full width for cards on small screens */
+    }
+    .form-row {
+        flex-direction: column; /* Stack expiry and CVV vertically */
+        gap: 10px;
+    }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Details - CDS MedEase</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="patient_details_for_doctor.css">
+    <script defer src="patient_details_for_doctor.js"></script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1><a href="index.html" class="medease-logo">🏥 CDS MedEase</a></h1>
+            <nav id="main-nav">
+                <a href="index.html">Home</a>
+                <a href="doctor_dashboard.html">My Dashboard</a>
+                <a href="Aboutus.html">About Us</a>
+            </nav>
+            <div class="auth-buttons" id="auth-buttons">
+                </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2 id="patient-name-header">Patient Details</h2>
+
+        <section class="details-section">
+            <h3>Patient Profile</h3>
+            <div class="patient-profile" id="patientProfile">
+                <p><strong>Name:</strong> <span id="profileName">Loading...</span></p>
+                <p><strong>Email:</strong> <span id="profileEmail">Loading...</span></p>
+            </div>
+        </section>
+
+        <section class="details-section">
+            <h3>Medical History Documents</h3>
+            <div class="medical-history-list" id="medicalHistoryList">
+                <p id="no-medical-history-msg" style="display: none;">No medical history documents found for this patient.</p>
+                </div>
+        </section>
+
+        <button onclick="window.history.back()" class="back-button">Back to Dashboard</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 CDS MedEase. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,3 @@
+Step1 : cd "F:\PROJECTS\Updated MP\server"
+Step2 : npm install
+Step3 : npm start

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Appointment Confirmation</title>
+  <link rel="stylesheet" href="appointment.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script defer src="appointment.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h2>Appointment Confirmed!</h2>
+    <p><strong>📅 Date:</strong> <span id="date"></span></p>
+    <p><strong>🕒 Time:</strong> <span id="time"></span></p>
+    <hr />
+
+    <h3>Doctor Details</h3>
+    <p><strong>👨‍⚕️ Doctor:</strong> <span id="doctor-name"></span></p>
+    <p><strong>🩺 Specialty:</strong> <span id="doctor-specialty"></span></p>
+    <hr />
+
+    <h3>Hospital Details</h3>
+    <p><strong>🏥 Hospital:</strong> <span id="hospital-name"></span></p>
+    <p><strong>📍 Address:</strong> <span id="hospital-address"></span></p>
+    <hr />
+
+    <div id="review-section" style="display: none;">
+        <h3>Rate Your Experience with Dr. <span id="review-doctor-name"></span></h3>
+        <div class="star-rating" id="starRating">
+            <span class="star" data-value="1"><i class="far fa-star"></i></span>
+            <span class="star" data-value="2"><i class="far fa-star"></i></span>
+            <span class="star" data-value="3"><i class="far fa-star"></i></span>
+            <span class="star" data-value="4"><i class="far fa-star"></i></span>
+            <span class="star" data-value="5"><i class="far fa-star"></i></span>
+        </div>
+        <textarea id="review-comment" placeholder="Write a comment (optional)" rows="4"></textarea>
+        <button id="submitReviewBtn">Submit Review</button>
+    </div>
+
+    <a href="pay_now.html" class="pay-now-button">Pay Now</a>
+  </div>
+</body>
+</html>

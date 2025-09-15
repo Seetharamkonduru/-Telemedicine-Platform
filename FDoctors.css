@@ -1,0 +1,143 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+}
+
+.search-filter {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+    width: 60%;
+}
+
+button {
+    padding: 10px;
+    background-color: #008cba;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.doctor-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.doctor-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.doctor-card:hover {
+    transform: translateY(-5px);
+}
+
+.doctor-card h3 {
+    margin: 10px 0 5px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+}
+
+.doctor-card p {
+    margin: 5px 0;
+    color: #444;
+}
+
+.doctor-card .rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 8px 0;
+    font-weight: bold;
+    color: #333;
+}
+
+.doctor-card .rating i {
+    color: #f0c040;
+    margin-right: 5px;
+}
+
+.doctor-card a.book-button {
+    display: inline-block;
+    background-color: #008cba;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.doctor-card a.book-button:hover {
+    background-color: #0077a8;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 15px 50px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar h1 {
+    color: #008cba;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #008cba;
+}
+
+.medease-logo {
+    font-size: 1.5rem;
+    color: #008cba;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 992px) {
+    .doctor-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .doctor-list {
+        grid-template-columns: 1fr;
+    }
+}

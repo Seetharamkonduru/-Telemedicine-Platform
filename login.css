@@ -1,0 +1,233 @@
+/* Import Google Font - Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* General Styles */
+body {
+    font-family: 'Inter', sans-serif; /* Professional font */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Use min-height for better content handling */
+    background-color: #f0f2f5; /* Light gray background */
+    margin: 0;
+    padding: 20px; /* Add some padding around the edges */
+    box-sizing: border-box; /* Include padding in element's total width and height */
+
+    /* Background Image Styles */
+    background-image: url('Campus2.jpg'); /* Placeholder image URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 900px; /* Slightly smaller max-width for a more focused look */
+    background: rgba(255, 255, 255, 0.95); /* Almost opaque white background for form */
+    padding: 40px; /* Increased padding */
+    border-radius: 12px; /* Softly rounded corners */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* Softer, more diffused shadow */
+    z-index: 1;
+    position: relative;
+    display: flex; /* Use flexbox for content layout */
+    flex-direction: column; /* Stack tabs and content vertically */
+    gap: 30px; /* Space between tabs and content */
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    justify-content: flex-start;
+    padding-bottom: 15px; /* Increased padding */
+    border-bottom: 1px solid #e0e0e0; /* Lighter border */
+    margin-bottom: 15px; /* Space below tabs */
+}
+
+.tabs a {
+    text-decoration: none;
+    color: #667085; /* Softer gray for inactive tabs */
+    font-size: 1.1rem; /* Slightly larger font */
+    font-weight: 500; /* Medium weight */
+    margin-right: 30px;
+    padding-bottom: 10px; /* Increased padding */
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.tabs a.active {
+    color: #2e7d32; /* A professional green for active tab */
+    border-bottom: 3px solid #2e7d32; /* Matching border */
+    font-weight: 600; /* Bolder for active */
+}
+
+/* Content Layout */
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px; /* Increased space between illustration and form */
+}
+
+/* Illustration */
+.illustration {
+    flex-shrink: 0; /* Prevent illustration from shrinking */
+}
+.illustration img {
+    width: 100%;
+    max-width: 350px; /* Adjusted max-width */
+    height: auto;
+    border-radius: 8px; /* Slightly rounded corners for the image */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Subtle shadow for image */
+}
+
+/* Form Section */
+.form-section {
+    flex-grow: 1; /* Allow form to take available space */
+    background: transparent; /* No background for the form itself, container handles it */
+    padding: 0; /* Remove padding from here, handled by container */
+    border-radius: 0; /* No border-radius here */
+}
+
+.form-section h2 {
+    text-align: center;
+    color: #333; /* Darker text for headings */
+    margin-bottom: 30px; /* Increased margin */
+    font-size: 2rem; /* Larger heading */
+    font-weight: 700; /* Bold heading */
+}
+
+.form-section label {
+    display: block;
+    font-weight: 600;
+    margin-top: 20px; /* Increased margin */
+    margin-bottom: 8px; /* Space between label and input */
+    font-size: 0.95rem; /* Slightly smaller label font */
+    color: #4a5568; /* Darker gray for labels */
+}
+
+.form-section input {
+    width: 100%;
+    padding: 12px 15px; /* Increased padding for inputs */
+    border: 1px solid #d1d5db; /* Lighter border */
+    border-radius: 8px; /* More rounded inputs */
+    font-size: 1rem;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05); /* Subtle inner shadow */
+}
+
+.form-section input:focus {
+    border-color: #2e7d32; /* Green focus border */
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.2); /* Soft focus ring */
+}
+
+/* Role Selection */
+.role-selection {
+    margin-top: 25px; /* Increased margin */
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between radio buttons */
+}
+
+.role-selection label {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 500; /* Medium weight for radio labels */
+    display: inline-flex; /* Use inline-flex to align radio and text */
+    align-items: center;
+    cursor: pointer;
+    color: #4a5568;
+}
+
+.role-selection input[type="radio"] {
+    width: auto; /* Override full width */
+    margin-right: 8px; /* Space between radio and label text */
+    transform: scale(1.1);
+    cursor: pointer;
+    accent-color: #2e7d32; /* Green accent for radio buttons */
+    box-shadow: none; /* Remove extra shadow from radio */
+}
+
+/* Login Button */
+.login-btn {
+    width: 100%;
+    padding: 14px; /* Increased padding */
+    background: linear-gradient(135deg, #2e7d32, #1b5e20); /* Green gradient */
+    color: white;
+    border: none;
+    border-radius: 8px; /* Rounded button */
+    font-size: 1.1rem; /* Larger font */
+    font-weight: 600; /* Bolder text */
+    margin-top: 30px; /* Increased margin */
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3); /* Subtle shadow for button */
+}
+
+.login-btn:hover {
+    background: linear-gradient(135deg, #1b5e20, #2e7d32); /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 6px 16px rgba(46, 125, 50, 0.4); /* Enhanced shadow on hover */
+}
+
+.login-btn:active {
+    transform: translateY(0); /* Press down effect */
+    box-shadow: 0 2px 8px rgba(46, 125, 50, 0.2);
+}
+
+/* Messages */
+.message {
+    margin-top: 20px; /* Increased margin */
+    font-weight: 500;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.message[style*="red"] {
+    color: #dc3545; /* Standard red for errors */
+}
+
+.message[style*="green"] {
+    color: #28a745; /* Standard green for success */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 15px; /* Reduce padding on smaller screens */
+    }
+    .container {
+        padding: 25px; /* Reduce container padding */
+        gap: 20px;
+    }
+    .content {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .illustration {
+        margin-bottom: 0; /* Remove margin-bottom if stacking */
+    }
+
+    .illustration img {
+        max-width: 250px; /* Smaller image on mobile */
+    }
+
+    .form-section {
+        width: 100%; /* Full width on mobile */
+    }
+
+    .form-section h2 {
+        font-size: 1.8rem; /* Adjust heading size */
+        margin-bottom: 25px;
+    }
+
+    .role-selection {
+        flex-direction: column; /* Stack radio buttons vertically */
+        align-items: flex-start; /* Align to left */
+        gap: 10px;
+    }
+}

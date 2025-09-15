@@ -1,0 +1,39 @@
+/* register.css - Specific styles for the registration page */
+
+/* Adjust heading specific to register page if needed, otherwise login.css h2 applies */
+.form-section h2 {
+    color: #2e7d32; /* Consistent green for register heading */
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+/* Adjust illustration size for register page if needed, otherwise login.css applies */
+.illustration img {
+    max-width: 350px; /* Consistent with login.css now */
+}
+
+/* Specific fields for patient/doctor roles */
+#patient-fields,
+#doctor-fields {
+    margin-top: 15px; /* Consistent spacing for these sections */
+}
+
+/* Responsive adjustments for register page if different from login */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .illustration {
+        margin-bottom: 0;
+    }
+    .form-section {
+        width: 100%;
+    }
+    .illustration img {
+        max-width: 100%;
+    }
+    .form-section h2 {
+        font-size: 1.8rem;
+    }
+}

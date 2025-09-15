@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - CDS MedEase</title>
+    <link rel="stylesheet" href="login.css"> <link rel="stylesheet" href="register.css"> </head>
+<body>
+    <div class="container">
+        <div class="tabs">
+            <a href="login.html" class="tab-link">Login</a>
+            <a href="register.html" class="tab-link active">Register</a>
+        </div>
+        <div class="content">
+            <div class="illustration">
+                <img src="https://placehold.co/400x300/E0F2F7/007bff?text=Create+Account" alt="Healthcare Illustration">
+            </div>
+
+            <div class="form-section active" id="register-form-section">
+                <h2>Create Your Account</h2>
+                <form id="registerForm">
+                    <label for="register-email">Email ID</label>
+                    <input type="email" id="register-email" placeholder="Your Email ID" required>
+
+                    <label for="register-password">Password</label>
+                    <input type="password" id="register-password" placeholder="Choose a Password" required>
+
+                    <label for="register-confirm-password">Confirm Password</label>
+                    <input type="password" id="register-confirm-password" placeholder="Confirm Your Password" required>
+
+                    <div class="role-selection">
+                        <label>Register As:</label>
+                        <input type="radio" id="register-patient-role" name="register-role" value="patient" checked>
+                        <label for="register-patient-role">Patient</label>
+                        <input type="radio" id="register-doctor-role" name="register-role" value="doctor">
+                        <label for="register-doctor-role">Doctor</label>
+                    </div>
+
+                    <div id="patient-fields" style="display: block;">
+                        <label for="patient-name">Your Full Name</label>
+                        <input type="text" id="patient-name" placeholder="John Doe">
+                    </div>
+
+                    <div id="doctor-fields" style="display: none;">
+                        <label for="doctor-name">Doctor Name</label>
+                        <input type="text" id="doctor-name" placeholder="Dr. Jane Smith">
+
+                        <label for="doctor-specialty">Specialty</label>
+                        <input type="text" id="doctor-specialty" placeholder="Cardiology">
+
+                        <label for="doctor-hospital">Hospital</label>
+                        <input type="text" id="doctor-hospital" placeholder="City General Hospital">
+
+                        <label for="doctor-price">Price per Hour (₹)</label> <input type="number" id="doctor-price" placeholder="500" min="0"> </div>
+
+                    <button type="submit" class="login-btn">Register</button>
+                    <p id="registerMessage" class="message"></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="register.js"></script>
+</body>
+</html>

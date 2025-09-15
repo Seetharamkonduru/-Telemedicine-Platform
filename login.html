@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - CDS MedEase</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="tabs">
+            <a href="login.html" class="tab-link active">Login</a>
+            <a href="register.html" class="tab-link">Register</a> </div>
+        <div class="content">
+            <div class="illustration">
+                <img src="Campus3.jpg" alt="">
+            </div>
+
+            <div class="form-section active" id="login-form-section">
+                <h2>Login</h2>
+                <form id="loginForm">
+                    <label for="login-email">Email ID</label>
+                    <input type="email" id="login-email" placeholder="Your Email ID" required>
+
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" placeholder="Your Password" required>
+
+                    <div class="role-selection">
+                        <label>Login As:</label>
+                        <input type="radio" id="login-patient-role" name="login-role" value="patient" checked>
+                        <label for="login-patient-role">Patient</label>
+                        <input type="radio" id="login-doctor-role" name="login-role" value="doctor">
+                        <label for="login-doctor-role">Doctor</label>
+                    </div>
+
+                    <button type="submit" class="login-btn">Login</button>
+                    <p id="loginMessage" class="message"></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

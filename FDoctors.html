@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Doctor Appointment Booking</title>
+    <link rel="stylesheet" href="FDoctors.css" />
+    <script defer src="FDoctors.js"></script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1><a href="index.html" class="medease-logo">🏥 CDS MedEase</a></h1>
+            <nav id="main-nav"> <a href="index.html">Home</a>
+                <a href="FDoctors.html">Find Doctors</a>
+                <a href="FDoctors.html">Book Appointments</a> <a href="Aboutus.html">About Us</a>
+            </nav>
+            <div class="auth-buttons" id="auth-buttons"> <a href="login.html" class="sign-in-button">
+                    <button class="sign-in">Sign In</button>
+                </a>
+                <a href="register.html" class="register-button">
+                    <button class="register">Register</button>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="search-filter">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search doctors, specialties..." />
+                <button onclick="filterDoctors()">Search</button>
+            </div>
+        </div>
+        <div class="doctor-list" id="doctorList"></div>
+    </div>
+</body>
+</html>

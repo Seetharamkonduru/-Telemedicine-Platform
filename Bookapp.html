@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Slot Booking</title>
+  <link rel="stylesheet" href="BookApp.css" />
+  <script defer src="BookApp.js"></script>
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <h1>🏥 CDS MedEase</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="FDoctors.html">Find Doctors</a>
+        <a href="FDoctors.html">Book Appointments</a>
+        <a href="Aboutus.html">About Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="doctor-info-booking" id="doctorInfoBooking">
+      </div>
+    <div class="calendar-container">
+      <label for="calendar">Select a Date:</label>
+      <input type="date" id="calendar" onchange="selectDate(event)">
+    </div>
+
+    <div class="nav-buttons">
+      <h3 id="selected-date">Select a Date</h3>
+      <p id="availability" class="availability"></p>
+    </div>
+
+    <div class="slots" id="slots">
+      </div>
+
+    </div>
+</body>
+</html>

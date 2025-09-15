@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pay Now - CDS MedEase</title>
+    <link rel="stylesheet" href="index.css"> <link rel="stylesheet" href="pay_now.css"> </head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1><a href="index.html" class="medease-logo">🏥 CDS MedEase</a></h1>
+            <nav id="main-nav">
+                <a href="index.html">Home</a>
+                <a href="FDoctors.html">Find Doctors</a>
+                <a href="Aboutus.html">About Us</a>
+            </nav>
+            <div class="auth-buttons" id="auth-buttons">
+                </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Complete Your Payment</h2>
+
+        <div class="payment-options">
+            <div class="qr-code-section payment-card">
+                <h3>Scan to Pay (UPI)</h3>
+                <img src="https://placehold.co/200x200/28a745/ffffff?text=QR+Code" alt="QR Code" class="qr-code">
+                <p>Scan this QR code with your preferred UPI app to complete the payment.</p>
+            </div>
+
+            <div class="card-details-section payment-card">
+                <h3>Pay with Card</h3>
+                <form id="cardPaymentForm">
+                    <div class="form-group">
+                        <label for="cardNumber">Card Number</label>
+                        <input type="text" id="cardNumber" placeholder="XXXX XXXX XXXX XXXX" required pattern="\d{4}\s?\d{4}\s?\d{4}\s?\d{4}">
+                    </div>
+                    <div class="form-group">
+                        <label for="cardName">Card Holder Name</label>
+                        <input type="text" id="cardName" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group expiry-cvv">
+                            <label for="expiryDate">Expiry Date</label>
+                            <input type="text" id="expiryDate" placeholder="MM/YY" required pattern="(0[1-9]|1[0-2])\/?([0-9]{2})">
+                        </div>
+                        <div class="form-group expiry-cvv">
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" placeholder="XXX" required pattern="\d{3,4}">
+                        </div>
+                    </div>
+                    <button type="submit" class="submit-payment-btn">Pay Now</button>
+                    <p id="paymentMessage" class="message"></p>
+                </form>
+            </div>
+        </div>
+
+        <button onclick="window.location.href='patient_dashboard.html'" class="back-to-dashboard-btn">Back to Dashboard</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 CDS MedEase. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Basic form submission handling for demonstration
+        document.getElementById('cardPaymentForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const paymentMessage = document.getElementById('paymentMessage');
+            paymentMessage.textContent = 'Processing payment...';
+            paymentMessage.style.color = 'blue';
+
+            // Simulate payment processing
+            setTimeout(() => {
+                paymentMessage.textContent = 'Payment successful! Redirecting to dashboard...';
+                paymentMessage.style.color = 'green';
+                // In a real app, you'd handle actual payment gateway integration here
+                // and then redirect to a confirmation page or dashboard.
+                setTimeout(() => {
+                    window.location.href = 'patient_dashboard.html';
+                }, 1500);
+            }, 2000);
+        });
+
+        // Dynamic navbar update (reusing logic from index.js/FDoctors.js)
+        document.addEventListener("DOMContentLoaded", () => {
+            const token = localStorage.getItem('token');
+            const userRole = localStorage.getItem('userRole');
+            const authButtonsDiv = document.getElementById('auth-buttons');
+            const mainNav = document.getElementById('main-nav');
+
+            function updateUI() {
+                // Clear existing dynamic links first to prevent duplicates
+                const existingPatientDashboardLink = mainNav.querySelector('a[href="patient_dashboard.html"]');
+                if (existingPatientDashboardLink) existingPatientDashboardLink.remove();
+                const existingDoctorDashboardLink = mainNav.querySelector('a[href="doctor_dashboard.html"]');
+                if (existingDoctorDashboardLink) existingDoctorDashboardLink.remove();
+                const existingBookAppointmentsLink = mainNav.querySelector('a[href="FDoctors.html"]');
+                if (existingBookAppointmentsLink && existingBookAppointmentsLink.textContent === 'Book Appointments') {
+                    existingBookAppointmentsLink.remove();
+                }
+
+                if (!token || !userRole) {
+                    authButtonsDiv.innerHTML = `
+                        <a href="login.html" class="sign-in-button">
+                            <button class="sign-in">Sign In</button>
+                        </a>
+                        <a href="register.html" class="register-button">
+                            <button class="register">Register</button>
+                        </a>
+                    `;
+                    const bookAppointmentsLink = document.createElement('a');
+                    bookAppointmentsLink.href = 'FDoctors.html';
+                    bookAppointmentsLink.textContent = 'Book Appointments';
+                    const findDoctorsLink = mainNav.querySelector('a[href="FDoctors.html"]');
+                    if (findDoctorsLink) {
+                        mainNav.insertBefore(bookAppointmentsLink, findDoctorsLink.nextSibling);
+                    } else {
+                        mainNav.appendChild(bookAppointmentsLink);
+                    }
+                } else {
+                    authButtonsDiv.innerHTML = `
+                        <button class="logout-btn">Logout</button>
+                    `;
+                    document.querySelector('.logout-btn').addEventListener('click', () => {
+                        localStorage.removeItem('token');
+                        localStorage.removeItem('userRole');
+                        localStorage.removeItem('userId');
+                        localStorage.removeItem('userName');
+                        localStorage.removeItem('userEmail');
+                        localStorage.removeItem('userSpecialty');
+                        localStorage.removeItem('userHospital');
+                        alert('You have been logged out.');
+                        window.location.href = 'login.html';
+                    });
+
+                    if (userRole === 'patient') {
+                        const patientDashboardLink = document.createElement('a');
+                        patientDashboardLink.href = 'patient_dashboard.html';
+                        patientDashboardLink.textContent = 'My Dashboard';
+                        const findDoctorsLink = mainNav.querySelector('a[href="FDoctors.html"]');
+                        if (findDoctorsLink) {
+                            mainNav.insertBefore(patientDashboardLink, findDoctorsLink.nextSibling);
+                        } else {
+                            mainNav.appendChild(patientDashboardLink);
+                        }
+                    } else if (userRole === 'doctor') {
+                        const doctorDashboardLink = document.createElement('a');
+                        doctorDashboardLink.href = 'doctor_dashboard.html';
+                        doctorDashboardLink.textContent = 'My Dashboard';
+                        const findDoctorsLink = mainNav.querySelector('a[href="FDoctors.html"]');
+                        if (findDoctorsLink) {
+                            mainNav.insertBefore(doctorDashboardLink, findDoctorsLink.nextSibling);
+                        } else {
+                            mainNav.appendChild(doctorDashboardLink);
+                        }
+                    }
+                }
+            }
+            updateUI();
+        });
+    </script>
+</body>
+</html>

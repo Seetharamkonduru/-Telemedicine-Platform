@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard - CDS MedEase</title>
+    <link rel="stylesheet" href="index.css"> <link rel="stylesheet" href="doctor_dashboard.css"> <script defer src="doctor_dashboard.js"></script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1><a href="index.html" class="medease-logo">🏥 CDS MedEase</a></h1>
+            <nav id="main-nav">
+                <a href="index.html">Home</a>
+                <a href="doctor_dashboard.html">My Dashboard</a>
+                <a href="Aboutus.html">About Us</a>
+            </nav>
+            <div class="auth-buttons" id="auth-buttons">
+                </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2 id="doctor-welcome">Doctor Dashboard</h2>
+
+        <section class="dashboard-section">
+            <h3>My Profile</h3>
+            <div class="doctor-profile" id="doctorProfile">
+                <p><strong>Name:</strong> <span id="profileName">Loading...</span></p>
+                <p><strong>Email:</strong> <span id="profileEmail">Loading...</span></p>
+                <p><strong>Specialty:</strong> <span id="profileSpecialty">Loading...</span></p>
+                <p><strong>Hospital:</strong> <span id="profileHospital">Loading...</span></p>
+                </div>
+        </section>
+
+        <section class="dashboard-section">
+            <h3>Upcoming Appointments</h3>
+            <div class="appointments-list" id="upcomingAppointments">
+                <p id="no-upcoming-appointments-msg" style="display: none;">No upcoming appointments.</p>
+                </div>
+        </section>
+
+        <section class="dashboard-section">
+            <h3>Past Appointments</h3>
+            <div class="appointments-list" id="pastAppointments">
+                <p id="no-past-appointments-msg" style="display: none;">No past appointments.</p>
+                </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 CDS MedEase. All rights reserved.</p>
+    </footer>
+</body>
+</html>

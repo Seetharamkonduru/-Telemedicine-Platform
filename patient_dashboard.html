@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard - CDS MedEase</title>
+    <link rel="stylesheet" href="index.css"> <link rel="stylesheet" href="patient_dashboard.css"> <script defer src="patient_dashboard.js"></script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1><a href="index.html" class="medease-logo">🏥 CDS MedEase</a></h1>
+            <nav id="main-nav">
+                <a href="index.html">Home</a>
+                <a href="FDoctors.html">Find Doctors</a>
+                <a href="patient_dashboard.html">My Dashboard</a> <a href="Aboutus.html">About Us</a>
+            </nav>
+            <div class="auth-buttons" id="auth-buttons">
+                </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2 id="patient-welcome">Patient Dashboard</h2>
+
+        <section class="dashboard-section">
+            <h3>My Profile</h3>
+            <div class="patient-profile" id="patientProfile">
+                <p><strong>Name:</strong> <span id="profileName">Loading...</span></p>
+                <p><strong>Email:</strong> <span id="profileEmail">Loading...</span></p>
+            </div>
+        </section>
+
+        <section class="dashboard-section">
+            <h3>Upcoming Appointments</h3>
+            <div class="appointments-list" id="upcomingAppointments">
+                <p id="no-upcoming-appointments-msg" style="display: none;">No upcoming appointments.</p>
+            </div>
+        </section>
+
+        <section class="dashboard-section">
+            <h3>Past Appointments</h3>
+            <div class="appointments-list" id="pastAppointments">
+                <p id="no-past-appointments-msg" style="display: none;">No past appointments.</p>
+            </div>
+        </section>
+
+        <section class="dashboard-section">
+            <h3>My Medical History</h3>
+            <div class="medical-history-list" id="medicalHistoryList">
+                <p id="no-medical-history-msg" style="display: none;">No medical history records found.</p>
+            </div>
+            <div class="upload-section">
+                <h4>Upload New Medical Document</h4>
+                <input type="file" id="medicalFile" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+                <button id="uploadMedicalFileBtn">Upload Document</button>
+                <p id="uploadMessage" class="message"></p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 CDS MedEase. All rights reserved.</p>
+    </footer>
+</body>
+</html>
